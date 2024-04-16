@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        
-function esNumero(valor) {
-    return !isNaN(valor) && isFinite(valor);
-}
+
+        function esNumero(valor) {
+            return !isNaN(valor) && isFinite(valor);
+        }
 
 
-function calcularMedia(notas) {
-    var suma = 0;
-    for (var i = 0; i < notas.length; i++) {
-        suma += notas[i];
-    }
-    return suma / notas.length;
-}
+        function calcularMedia(notas) {
+            var suma = 0;
+            for (var i = 0; i < notas.length; i++) {
+                suma += notas[i];
+            }
+            return suma / notas.length;
+        }
 
 
-function verificarAprobacion(media) {
-    if (media >= 3) {
-        return "Aprobado";
-    } else {
-        return "Reprobado";
-    }
-}
+        function verificarAprobacion(media) {
+            if (media >= 3) {
+                return "Aprobado";
+            } else {
+                return "Reprobado";
+            }
+        }
 
 
-var notas = [];
+        var notas = [];
 
 
-for (var i = 0; i < 3; i++) {
-    var nota;
-    do {
-        nota = prompt("Introduce la nota " + (i + 1) + ":");
-    } while (!esNumero(nota));
-    notas.push(parseFloat(nota));
-}
+        for (var i = 0; i < 3; i++) {
+            var nota;
+            do {
+                nota = prompt("Introduce la nota " + (i + 1) + ":");
+            } while (!esNumero(nota));
+            notas.push(parseFloat(nota));
+        }
 
 
-var media = calcularMedia(notas);
+        var media = calcularMedia(notas);
 
 
-var estado = verificarAprobacion(media);
+        var estado = verificarAprobacion(media);
 
-alert("La nota media es: " + media.toFixed(2) + ". El estudiante está " + estado + ".");
+        alert("La nota media es: " + media.toFixed(2) + ". El estudiante está " + estado + ".");
 
     </script>
 </body>
+
 </html>

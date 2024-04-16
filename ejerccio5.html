@@ -7,28 +7,33 @@
 </head>
 <body>
     <script>
-       
-function esNumero(valor) {
-    return !isNaN(valor) && isFinite(valor);
-}
+
+var input1 = prompt("Introduce el primer número:");
 
 
-var numero1 = prompt("Introduce el primer número:");
-var numero2 = prompt("Introduce el segundo número:");
+if (!isNaN(input1)) {
 
+    var numero1 = parseFloat(input1);
 
-if (esNumero(numero1) && esNumero(numero2)) {
+    var input2 = prompt("Introduce el segundo número:");
 
-    numero1 = parseFloat(numero1);
-    numero2 = parseFloat(numero2);
+  
+    if (!isNaN(input2)) {
+        
+        var numero2 = parseFloat(input2);
 
-    var suma = numero1 + numero2;
+        
+        var suma = numero1 + numero2;
 
-   
-    alert("La suma de los dos números es: " + suma);
+    
+        alert("La suma de los dos números es: " + suma);
+    } else {
+        
+        alert("El segundo valor introducido no es un número válido.");
+    }
 } else {
     
-    alert("Por favor, introduce dos números válidos.");
+    alert("El primer valor introducido no es un número válido.");
 }
 
     </script>
