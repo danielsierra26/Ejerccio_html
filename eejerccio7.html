@@ -10,47 +10,39 @@
 <body>
     <script>
 
-        function esNumero(valor) {
-            return !isNaN(valor) && isFinite(valor);
-        }
+var nota1, nota2, nota3;
 
 
-        function calcularMedia(notas) {
-            var suma = 0;
-            for (var i = 0; i < notas.length; i++) {
-                suma += notas[i];
-            }
-            return suma / notas.length;
-        }
+do {
+    nota1 = prompt("Introduce la primera nota:");
+} while (isNaN(nota1));
+
+nota1 = parseFloat(nota1);
 
 
-        function verificarAprobacion(media) {
-            if (media >= 3) {
-                return "Aprobado";
-            } else {
-                return "Reprobado";
-            }
-        }
+do {
+    nota2 = prompt("Introduce la segunda nota:");
+} while (isNaN(nota2));
 
 
-        var notas = [];
+nota2 = parseFloat(nota2);
 
 
-        for (var i = 0; i < 3; i++) {
-            var nota;
-            do {
-                nota = prompt("Introduce la nota " + (i + 1) + ":");
-            } while (!esNumero(nota));
-            notas.push(parseFloat(nota));
-        }
+do {
+    nota3 = prompt("Introduce la tercera nota:");
+} while (isNaN(nota3));
 
 
-        var media = calcularMedia(notas);
+nota3 = parseFloat(nota3);
+
+var media = (nota1 + nota2 + nota3) / 3;
 
 
-        var estado = verificarAprobacion(media);
-
-        alert("La nota media es: " + media.toFixed(2) + ". El estudiante está " + estado + ".");
+if (media < 3) {
+    alert("Estás reprobado. Tu nota media es: " + media.toFixed(2));
+} else {
+    alert("Estás aprobado. Tu nota media es: " + media.toFixed(2));
+}
 
     </script>
 </body>
